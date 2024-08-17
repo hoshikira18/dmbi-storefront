@@ -1,3 +1,5 @@
+import { Banner } from '@/sections/home';
+
 export const metadata = {
     title: 'DMB Industrial',
     description:
@@ -5,5 +7,9 @@ export const metadata = {
 };
 
 export default function Home() {
-    return <main className="">Homepage</main>;
+    return (
+        <main className="mx-auto max-w-screen-xl">
+            <Banner />
+        </main>
+    );
 }

@@ -2,7 +2,7 @@ import { Footer, Header } from '../layout';
 
 const Layout = ({ children }) => {
     return (
-        <div className="bg-background min-h-screen">
+        <div className="min-h-screen bg-background">
             <Header />
             <div className="min-h-[80vh]">{children}</div>
             <Footer />
