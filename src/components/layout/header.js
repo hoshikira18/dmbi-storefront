@@ -9,6 +9,16 @@ const Header = () => {
     const [isHidden, setIsHidden] = useState('hidden');
     return (
         <header className="sticky top-0 z-50 border-b-2 border-primary bg-white shadow-sm">
+            <div className="bg-primary py-1 text-center text-yellow-400">
+                <div className="mx-auto flex max-w-screen-xl items-center justify-between">
+                    <span>Hotline: 1900.4790</span>
+                    <div className="text-white">
+                        <Link href="/news">Tin tức</Link>
+                        <span className="mx-2 border" />
+                        <Link href="/products">Công nghệ</Link>
+                    </div>
+                </div>
+            </div>
             <div className="relative mx-auto flex max-w-screen-xl items-center justify-between px-5 py-4 md:px-8 md:py-6 lg:px-0">
                 {/* logo */}
                 <Link href={'/'} className="block w-1/3">
