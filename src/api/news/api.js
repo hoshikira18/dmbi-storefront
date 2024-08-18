@@ -1,7 +1,7 @@
-import { axiosInstance } from '@/context/axios';
+import { instance } from '@/context/axios';
 
 export const getNews = async () => {
-    const news = await axiosInstance
+    const news = await instance
         .get('/posts')
         .then((res) => res.data)
         .catch((err) => {
