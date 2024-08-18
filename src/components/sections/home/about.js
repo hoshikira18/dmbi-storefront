@@ -11,7 +11,7 @@ const AboutSection = async () => {
     return (
         <div className="">
             <Title title="Giới thiệu về chúng tôi" />
-            <div className="relative grid grid-cols-7 gap-4 border bg-white px-5 py-8 shadow">
+            <div className="relative grid grid-cols-7 gap-4 border bg-white px-5 py-12 shadow">
                 <img
                     src="https://medusajs.com/_next/image/?url=%2Fimages%2Fhero-banner.png&w=3840&q=100"
                     className="absolute bottom-0 left-0 right-0 top-0 z-10 h-full w-full object-cover"
