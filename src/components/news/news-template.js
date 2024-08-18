@@ -1,7 +1,7 @@
 'use client';
 
 const NewsTemplate = ({ news }) => {
-    console.log(news);
+    // console.log(news);
     return <div></div>;
 };
 

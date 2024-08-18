@@ -4,8 +4,6 @@
 import Carousel from './carousel';
 
 const BannerTemplate = ({ banners }) => {
-    console.log(banners);
-
     return (
         <div>
             <Carousel className="hidden md:block">

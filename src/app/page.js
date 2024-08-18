@@ -1,4 +1,5 @@
-import { Banner } from '@/sections/home';
+import { Banner } from '@/components/sections/home';
+import AboutSection from '@/components/sections/home/about';
 
 export const metadata = {
     title: 'DMB Industrial',
@@ -10,6 +11,7 @@ export default function Home() {
     return (
         <main className="mx-auto max-w-screen-xl">
             <Banner />
+            <AboutSection />
         </main>
     );
 }
