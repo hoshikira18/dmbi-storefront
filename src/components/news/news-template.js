@@ -1,9 +1,8 @@
 'use client';
 
-const NewsTemplate = () => {
-    return (
-        <div> kakaak</div>
-    );
+const NewsTemplate = ({ news }) => {
+    console.log(news);
+    return <div></div>;
 };
 
 export default NewsTemplate;

@@ -1,7 +1,9 @@
-import NewsTemplate from "@/components/news/news-template";
+import { getNews } from '@/api/news/api';
+import { NewsTemplate } from '@/components/news';
 
-const NewsPage = () => {
-    return <NewsTemplate />
+const News = async () => {
+    const news = await getNews();
+    return <NewsTemplate news={news?.posts} />;
 };
 
-export default NewsPage;
+export default News;
