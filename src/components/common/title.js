@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
 
-const Title = ({ title = '', className = '' }) => {
+const Title = ({ children, className = '' }) => {
     return (
         <div
             className={cn(
@@ -9,7 +9,7 @@ const Title = ({ title = '', className = '' }) => {
                 className
             )}
         >
-            {title}
+            {children}
         </div>
     );
 };

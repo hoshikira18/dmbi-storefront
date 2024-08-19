@@ -14,10 +14,9 @@ const Uses = () => {
 
     return (
         <div className="bg-gradient-to-b from-primary/80 to-primary/50 px-5 pb-10">
-            <Title
-                className="text-center text-white"
-                title="Ứng dụng ngành công nghiệp"
-            />
+            <Title className="text-center text-white">
+                Ứng dụng ngành công nghiệp
+            </Title>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {!isLoading
                     ? product_categories?.map((category, index) => {
