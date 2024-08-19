@@ -1,5 +1,8 @@
 import { Footer, Header } from '../layout';
 
+export const revalidate = 10;
+export const dynamic = 'force-dynamic';
+
 const Layout = ({ children }) => {
     return (
         <div className="min-h-screen bg-background">
