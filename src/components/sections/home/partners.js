@@ -8,10 +8,9 @@ const PartnersSection = async () => {
     // console.log(partners);
     return (
         <div className="mb-10 bg-primary md:mb-16 md:text-center">
-            <Title
-                className="text-center text-white"
-                title="Đối tác của DBM Industrial"
-            />
+            <Title className="text-center text-white">
+                Đối tác của DBM Industrial
+            </Title>
             <div>
                 <PartnerSlider partners={partners.partners} />
             </div>

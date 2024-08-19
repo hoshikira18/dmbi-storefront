@@ -1,8 +1,12 @@
 import Button from '@/components/common/button';
-import { Banner } from '@/components/sections/home';
-import AboutSection from '@/components/sections/home/about';
-import PartnersSection from '@/components/sections/home/partners';
-import Uses from '@/components/sections/home/uses';
+import {
+    Uses,
+    Banner,
+    BestSelling,
+    AboutSection,
+    PriceRequest,
+    PartnersSection,
+} from '@/components/sections/home';
 
 export const metadata = {
     title: 'DMB Industrial',
@@ -25,6 +29,10 @@ export default function Home() {
                 <Button className="w-full py-5 md:w-1/3">
                     Giới thiệu khách
                 </Button>
+            </div>
+            <BestSelling />
+            <div className="mb-20 grid grid-cols-3 gap-4">
+                <PriceRequest className="col-span-1" />
             </div>
         </main>
     );
