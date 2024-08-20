@@ -17,17 +17,10 @@ const PriceRequest = ({ className = '' }) => {
     } = useForm();
 
     const onSubmit = async (data) => {
-        await sendPriceRequest(data).then(() => {
-            toast.success('Đã gửi thành công yêu cầu!', {
-                position: 'top-right',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: 'dark',
-            });
+        toast.promise(sendPriceRequest(data), {
+            pending: 'Đang gửi...',
+            success: 'Đã gửi thành công yêu cầu!',
+            error: 'Đã có lỗi xảy ra',
         });
     };
 
