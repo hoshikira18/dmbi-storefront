@@ -6,6 +6,7 @@ import {
     AboutSection,
     PriceRequest,
     PartnersSection,
+    News,
 } from '@/components/sections/home';
 
 export const metadata = {
@@ -31,8 +32,9 @@ export default function Home() {
                 </Button>
             </div>
             <BestSelling />
-            <div className="mb-20 grid grid-cols-3 gap-4">
-                <PriceRequest className="col-span-1" />
+            <div className="mb-20 grid grid-cols-4 gap-8 px-5 md:px-7 lg:grid-cols-3 lg:px-5 xl:px-0">
+                <PriceRequest className="col-span-4 md:col-span-2 lg:col-span-1" />
+                <News className="col-span-4 md:col-span-2 lg:col-span-2" />
             </div>
         </main>
     );

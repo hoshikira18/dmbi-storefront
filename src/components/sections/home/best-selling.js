@@ -9,15 +9,14 @@ const BestSelling = async () => {
         limit: 1,
     });
 
+    if (!productTags) return;
+
     const bestSellingProducts = await getProducts({
         tags: [productTags[0].id],
     });
 
-    console.log(bestSellingProducts);
-    console.log(bestSellingProducts.length);
-
     return (
-        <div className="bg-third mb-10 rounded-md border shadow">
+        <div className="mb-10 rounded-md border bg-third shadow">
             <Title className="text-center">Sản phẩm bán chạy</Title>
             <BestSellingSlider products={bestSellingProducts} />
         </div>
