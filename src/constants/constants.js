@@ -5,7 +5,7 @@ export const NAV_ITEMS = [
     },
     {
         title: 'Về chúng tôi',
-        url: '/about',
+        url: '#about',
     },
     {
         title: 'Sản phẩm',
