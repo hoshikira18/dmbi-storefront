@@ -1,3 +1,4 @@
+import { getBanners } from '@/api/banners/api';
 import { BreadCrumb } from '@/components/common';
 import { ProductsTemplate } from '@/components/products';
 
@@ -9,7 +10,9 @@ export const metadata = {
 
 export const dynamic = 'force-dynamic';
 
-const ProductsPage = () => {
+const ProductsPage = async () => {
+    const banners = await getBanners();
+
     const breadcrumb = [
         {
             title: 'Trang chủ',
@@ -23,7 +26,7 @@ const ProductsPage = () => {
     return (
         <div className="mx-auto min-h-[80vh] max-w-screen-xl">
             <BreadCrumb data={breadcrumb} />
-            <ProductsTemplate />
+            <ProductsTemplate banners={banners} />
         </div>
     );
 };
