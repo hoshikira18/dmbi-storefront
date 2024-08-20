@@ -5,14 +5,12 @@ import { cn } from '@/lib/utils';
 import React from 'react';
 
 const News = async ({ className }) => {
-    const posts = await getNews();
+    const posts = await getNews(6);
     console.log(posts.length);
 
     if (posts.length === 0) {
         return <div>Hiện chưa có bài viết nào</div>;
     }
-
-    const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
     return (
         <div className={cn('overflow-hidden', className)}>
