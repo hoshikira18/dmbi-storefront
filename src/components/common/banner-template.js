@@ -7,7 +7,7 @@ const BannerTemplate = ({ banners }) => {
     return (
         <div>
             <Carousel className="hidden md:block">
-                {banners.map((banner) => (
+                {banners?.map((banner) => (
                     <img
                         key={banner.id}
                         src={banner.image_pc}

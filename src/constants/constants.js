@@ -5,7 +5,7 @@ export const NAV_ITEMS = [
     },
     {
         title: 'Về chúng tôi',
-        url: '/about',
+        url: '#about',
     },
     {
         title: 'Sản phẩm',
@@ -16,3 +16,5 @@ export const NAV_ITEMS = [
         url: '/news',
     },
 ];
+
+export const PRODUCTS_PER_PAGE = 6;
