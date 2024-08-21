@@ -5,3 +5,5 @@ export { default as Input } from './input';
 export { default as TextArea } from './text-area';
 export { default as Title } from './title';
 export { default as BreadCrumb } from './bread-crumb';
+export { default as Pagination } from './pagination';
+export { default as ProductCardSkeleton } from './product-card-skeleton';

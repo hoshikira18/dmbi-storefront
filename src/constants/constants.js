@@ -16,3 +16,5 @@ export const NAV_ITEMS = [
         url: '/news',
     },
 ];
+
+export const PRODUCTS_PER_PAGE = 6;

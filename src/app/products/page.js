@@ -24,7 +24,7 @@ const ProductsPage = async () => {
         },
     ];
     return (
-        <div className="mx-auto min-h-[80vh] max-w-screen-xl">
+        <div className="mx-auto min-h-[80vh] max-w-screen-2xl">
             <BreadCrumb data={breadcrumb} />
             <ProductsTemplate banners={banners} />
         </div>
