@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const BreadCrumb = ({ data }) => {
     return (
-        <div className="py-3">
+        <div className="px-3 py-3 md:px-5 lg:px-8">
             {data.map((item, i) => (
                 <Link
                     className="text-base font-medium text-primary"
