@@ -3,7 +3,7 @@ import { NewsTemplate } from '@/components/news';
 
 const News = async () => {
     const news = await getNews();
-    return <NewsTemplate news={news?.posts} />;
+    return <NewsTemplate news={news?.posts} page={1} />;
 };
 
 export default News;
