@@ -6,7 +6,7 @@ import { Dropdown } from '../common';
 const CollectionsFilter = ({ setCollectionsId }) => {
     const { collections, isLoading } = useCollections();
     return (
-        <Dropdown label={'Danh mục'}>
+        <Dropdown label={'Bộ sản phẩm'}>
             {isLoading ? (
                 <div>Loading...</div>
             ) : (

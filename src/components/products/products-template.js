@@ -34,8 +34,8 @@ const ProductsTemplate = ({ banners }) => {
     const TOTAL_PAGES = Math.ceil(count / PRODUCTS_PER_PAGE);
 
     return (
-        <div className="flex px-3 md:px-5 lg:space-x-10 lg:px-8">
-            <div className="hidden w-1/4 space-y-5 rounded border bg-white p-5 shadow lg:block">
+        <div className="flex flex-col space-y-3 px-3 md:px-5 lg:flex-row lg:space-x-10 lg:space-y-0 lg:px-8">
+            <div className="w-full space-y-5 rounded border bg-white p-5 shadow lg:block lg:w-1/4">
                 <Search setSearchValue={setQ} />
                 <ProductFilter
                     setTagsId={setTagsId}
@@ -44,7 +44,7 @@ const ProductsTemplate = ({ banners }) => {
                 />
             </div>
             <div className="w-full lg:w-3/4">
-                <div className="overflow-hidden rounded">
+                <div className="hidden overflow-hidden rounded lg:block">
                     <BannerTemplate banners={banners} />
                 </div>
                 <div>
@@ -59,7 +59,7 @@ const ProductsTemplate = ({ banners }) => {
                         </div>
                     ) : (
                         <div>
-                            <div className="grid gap-y-5 py-5 sm:grid-cols-2 md:grid-cols-3">
+                            <div className="grid grid-cols-2 gap-3 py-5 md:grid-cols-3">
                                 {products?.map((product, index) => (
                                     <ProductCard
                                         key={index}

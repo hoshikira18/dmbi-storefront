@@ -11,11 +11,9 @@ const Dropdown = ({ children, label, open = false }) => {
                 onClick={() => {
                     setIsOpen((pre) => !pre);
                 }}
-                className="flex items-center space-x-5 border-b text-lg font-semibold uppercase text-primary"
+                className="flex items-center space-x-5 border-b text-base font-semibold uppercase text-primary lg:text-lg"
             >
-                <label className="w-full cursor-pointer text-wrap">
-                    {label}
-                </label>
+                <label className="w-full cursor-pointer">{label}</label>
                 <button
                     className={cn(
                         isOpen && 'rotate-180',
