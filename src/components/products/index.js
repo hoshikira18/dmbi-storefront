@@ -3,3 +3,4 @@ export { default as ProductFilter } from './filter';
 export { default as TagsFilter } from './tags-filter';
 export { default as CategoriesFilter } from './categories-filter';
 export { default as ProductsTemplate } from './products-template';
+export { default as ProductDetailTemplate } from './product-detail-template';

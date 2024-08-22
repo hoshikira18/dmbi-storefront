@@ -13,7 +13,7 @@ import { PRODUCTS_PER_PAGE } from '@/constants/constants';
 import ProductFilter from './filter';
 import Standee from './standee';
 
-const ProductsTemplate = ({ banners, children }) => {
+const ProductsTemplate = ({ banners, standeeImage, productOverall }) => {
     const [q, setQ] = useState('');
     const [tagsId, setTagsId] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -49,7 +49,9 @@ const ProductsTemplate = ({ banners, children }) => {
                         setCollectionsId={setCollectionsId}
                         setCategoriesId={setCategoriesId}
                     />
-                    <div className="hidden lg:block">{children}</div>
+                    <div className="hidden lg:block">
+                        <Standee standeeImage={standeeImage} />
+                    </div>
                 </div>
             </div>
             <div className="w-full lg:w-3/4">
@@ -77,7 +79,6 @@ const ProductsTemplate = ({ banners, children }) => {
                                 ))}
                             </div>
                             <Pagination
-                                // totalItems={20}
                                 totalPages={TOTAL_PAGES}
                                 currentPage={currentPage}
                                 setCurrentPage={setCurrentPage}
@@ -85,6 +86,7 @@ const ProductsTemplate = ({ banners, children }) => {
                         </div>
                     )}
                 </div>
+                <div>{/* Product overall */}</div>
             </div>
         </div>
     );

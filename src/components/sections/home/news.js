@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import React from 'react';
 
 const News = async ({ className }) => {
-    const posts = await getNews(6);
+    const posts = await getNews(6, 0);
     console.log(posts.length);
 
     if (posts.length === 0) {
