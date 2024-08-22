@@ -19,3 +19,11 @@ export const getProducts = async (options) => {
         });
     return products;
 };
+
+export const getProduct = async (id) => {
+    const product = await medusa.products
+        .retrieve(id)
+        .then((res) => res.product)
+        .catch((err) => console.log(err));
+    return product;
+};

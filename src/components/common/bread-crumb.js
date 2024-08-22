@@ -1,8 +1,9 @@
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
-const BreadCrumb = ({ data }) => {
+const BreadCrumb = ({ data, className }) => {
     return (
-        <div className="px-3 py-3 md:px-5 lg:px-8">
+        <div className={cn('py-3', className)}>
             {data.map((item, i) => (
                 <Link
                     className="text-base font-medium text-primary"

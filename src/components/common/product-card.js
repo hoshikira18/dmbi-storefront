@@ -16,9 +16,12 @@ const ProductCard = ({ product }) => {
             <p className="line-clamp-3 text-base font-medium">
                 {product?.title}
             </p>
+            {
+                product?.metadata?.price && 
             <p className="text-base font-medium text-red-500">
                 {formatNumber(product?.metadata?.price)} vnđ
             </p>
+            }
         </Link>
     );
 };
