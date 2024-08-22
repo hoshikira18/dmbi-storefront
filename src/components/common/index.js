@@ -6,5 +6,6 @@ export { default as Dropdown } from './dropdown';
 export { default as TextArea } from './text-area';
 export { default as Pagination } from './pagination';
 export { default as BreadCrumb } from './bread-crumb';
+export { default as ClientWrap } from './client-wrap';
 export { default as BannerTemplate } from './banner-template';
 export { default as ProductCardSkeleton } from './product-card-skeleton';

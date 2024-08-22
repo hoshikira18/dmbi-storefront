@@ -33,7 +33,7 @@ const PriceRequest = ({ className = '' }) => {
         >
             <div>
                 <Title className="z-20 bg-primary py-2 text-lg text-white md:py-3 md:text-xl">
-                    Tin tức sự kiện
+                    Gửi yêu cầu báo giá
                 </Title>
                 <form
                     onSubmit={handleSubmit(onSubmit)}

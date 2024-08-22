@@ -1,13 +1,19 @@
 'use client';
 import { useProducts } from 'medusa-react';
 import React, { useEffect, useState } from 'react';
-import { BannerTemplate, Pagination, ProductCardSkeleton } from '../common';
+import {
+    BannerTemplate,
+    ClientWrap,
+    Pagination,
+    ProductCardSkeleton,
+} from '../common';
 import ProductCard from '../common/product-card';
 import { Search } from '../layout';
 import { PRODUCTS_PER_PAGE } from '@/constants/constants';
 import ProductFilter from './filter';
+import Standee from './standee';
 
-const ProductsTemplate = ({ banners }) => {
+const ProductsTemplate = ({ banners, children }) => {
     const [q, setQ] = useState('');
     const [tagsId, setTagsId] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -35,13 +41,16 @@ const ProductsTemplate = ({ banners }) => {
 
     return (
         <div className="flex flex-col space-y-3 px-3 md:px-5 lg:flex-row lg:space-x-10 lg:space-y-0 lg:px-8">
-            <div className="w-full space-y-5 rounded border bg-white p-5 shadow lg:block lg:w-1/4">
-                <Search setSearchValue={setQ} />
-                <ProductFilter
-                    setTagsId={setTagsId}
-                    setCollectionsId={setCollectionsId}
-                    setCategoriesId={setCategoriesId}
-                />
+            <div className="w-full lg:block lg:w-1/4">
+                <div className="w-full space-y-5 rounded border bg-white p-5 shadow">
+                    <Search setSearchValue={setQ} />
+                    <ProductFilter
+                        setTagsId={setTagsId}
+                        setCollectionsId={setCollectionsId}
+                        setCategoriesId={setCategoriesId}
+                    />
+                    <div className="hidden lg:block">{children}</div>
+                </div>
             </div>
             <div className="w-full lg:w-3/4">
                 <div className="hidden overflow-hidden rounded lg:block">

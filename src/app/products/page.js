@@ -1,6 +1,6 @@
 import { getBanners } from '@/api/banners/api';
 import { BreadCrumb } from '@/components/common';
-import { ProductsTemplate } from '@/components/products';
+import { ProductsTemplate, Standee } from '@/components/products';
 
 export const metadata = {
     title: 'DMB Industrial | Sản phẩm',
@@ -26,7 +26,9 @@ const ProductsPage = async () => {
     return (
         <div className="mx-auto min-h-[80vh] max-w-screen-2xl">
             <BreadCrumb data={breadcrumb} />
-            <ProductsTemplate banners={banners} />
+            <ProductsTemplate banners={banners}>
+                <Standee />
+            </ProductsTemplate>
         </div>
     );
 };
