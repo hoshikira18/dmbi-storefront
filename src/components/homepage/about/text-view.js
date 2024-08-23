@@ -7,7 +7,7 @@ const FroalaEditorView = dynamic(
 );
 
 const TextViewer = ({ content }) => {
-    return <FroalaEditorView model={content} />;
+    return <FroalaEditorView model={content} className="text-red-500" />;
 };
 
 export default TextViewer;

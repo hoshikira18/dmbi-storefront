@@ -8,7 +8,7 @@ const ProductGeneral = ({ product, className = '' }) => {
             <h2 className="py-2 text-lg font-medium uppercase">
                 {product?.title}
             </h2>
-            <div className="grid grid-cols-2 gap-x-3 gap-y-4 border border-gray-400 p-3">
+            <div className="grid grid-cols-1 gap-x-3 gap-y-4 border border-gray-400 p-3 md:grid-cols-2">
                 <GeneralInfoItem
                     label={'Model'}
                     value={product?.metadata?.model}

@@ -6,7 +6,7 @@ const BreadCrumb = ({ data, className }) => {
         <div className={cn('py-3', className)}>
             {data.map((item, i) => (
                 <Link
-                    className="text-base font-medium text-primary"
+                    className="text-sm font-medium text-primary md:text-base"
                     key={item.title}
                     href={item.href}
                 >
