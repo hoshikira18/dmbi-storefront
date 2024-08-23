@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
     return (
         <Link
             href={`/products/${product.id}`}
-            className="min-h-64 space-y-2 rounded-md border bg-white px-3 pb-5 pt-3 shadow md:mx-3"
+            className="min-h-64 space-y-2 rounded-md border bg-white px-3 pb-5 pt-3 shadow"
         >
             <img
                 src={product?.thumbnail}
@@ -16,12 +16,11 @@ const ProductCard = ({ product }) => {
             <p className="line-clamp-3 text-base font-medium">
                 {product?.title}
             </p>
-            {
-                product?.metadata?.price && 
-            <p className="text-base font-medium text-red-500">
-                {formatNumber(product?.metadata?.price)} vnđ
-            </p>
-            }
+            {product?.metadata?.price && (
+                <p className="text-base font-medium text-red-500">
+                    {formatNumber(product?.metadata?.price)} vnđ
+                </p>
+            )}
         </Link>
     );
 };

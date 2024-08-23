@@ -7,7 +7,7 @@ import { useState } from 'react';
 const Search = ({ setSearchValue }) => {
     const [q, setQ] = useState('');
     return (
-        <div className="flex w-full items-center rounded-md border-2 border-gray-300 py-1 pl-3 pr-2">
+        <div className="flex w-full items-center justify-between rounded-md border-2 border-gray-300 py-1 pl-3 pr-2">
             <input
                 type="text"
                 placeholder="Tìm kiếm sản phẩm"
