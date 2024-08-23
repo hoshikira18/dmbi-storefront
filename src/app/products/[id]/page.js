@@ -13,7 +13,6 @@ export async function generateMetadata({ params }) {
 
 const ProductDetailPage = async ({ params }) => {
     const product = await getProduct(params.id);
-    console.log(product);
 
     return <ProductDetailTemplate product={product} />;
 };
