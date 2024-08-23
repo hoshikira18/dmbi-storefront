@@ -18,13 +18,6 @@ const Slider = ({
         plugins
     );
 
-    useEffect(() => {
-        if (emblaApi) {
-            // emblaApi.scrollNext();
-            // Add more customizations if needed
-        }
-    }, [emblaApi]);
-
     return (
         <div className={cn('relative overflow-hidden')} ref={emblaRef}>
             <div

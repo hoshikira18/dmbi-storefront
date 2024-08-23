@@ -1,3 +1,4 @@
+import { getNews } from '@/api/news/api';
 import { getProduct } from '@/api/products/api';
 import { ProductDetailTemplate } from '@/components/products';
 
@@ -13,8 +14,9 @@ export async function generateMetadata({ params }) {
 
 const ProductDetailPage = async ({ params }) => {
     const product = await getProduct(params.id);
+    const news = await getNews(3);
 
-    return <ProductDetailTemplate product={product} />;
+    return <ProductDetailTemplate product={product} news={news} />;
 };
 
 export default ProductDetailPage;

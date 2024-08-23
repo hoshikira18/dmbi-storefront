@@ -1,7 +1,9 @@
 import { BreadCrumb, Title } from '../common';
 import TextViewer from '../homepage/about/text-view';
+import News from './news';
 import ProductGeneral from './product-general';
 import ProductImage from './product-image';
+import SimilarProducts from './similar-products';
 
 export const metadata = {
     title: 'DMB Industrial',
@@ -9,7 +11,7 @@ export const metadata = {
         'DMB Industrial, chuyên cung cấp các sản phẩm công nghiệp, máy móc, thiết bị công nghiệp, dịch vụ sửa chữa, bảo trì máy móc công nghiệp',
 };
 
-const ProductDetailTemplate = ({ product }) => {
+const ProductDetailTemplate = ({ product, news }) => {
     const breadcrumbData = [
         {
             title: 'Trang chủ',
@@ -47,7 +49,7 @@ const ProductDetailTemplate = ({ product }) => {
                 </div>
 
                 <div className="col-span-3 hidden lg:block">
-                    <div className="rounded border bg-white p-3 shadow">
+                    <div className="space-y-3 rounded border bg-white p-3 shadow">
                         <div className="border-b pb-2 text-sm font-semibold uppercase text-gray-600">
                             Chính sách hỗ trợ khách hàng
                         </div>
@@ -58,9 +60,11 @@ const ProductDetailTemplate = ({ product }) => {
                             <li>Thiết kế hệ thống xử lý khí thải</li>
                             <li>Thiết kế hệ thống xử lý khí thải</li>
                         </ul>
+                        <News news={news} />
                     </div>
                 </div>
             </div>
+            <SimilarProducts />
         </div>
     );
 };
