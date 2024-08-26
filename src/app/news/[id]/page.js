@@ -1,3 +1,4 @@
+
 import { getNews } from '@/api/news/api';
 import PageNews from '../List_Page/page';
 import { NEWS_PER_PAGE } from '@/constants/constants';
@@ -13,3 +14,4 @@ const NewsPage = async (id) => {
 };
 
 export default NewsPage;
+

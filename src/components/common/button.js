@@ -12,7 +12,7 @@ const Button = ({
     const attributes = {
         href,
         className: cn(
-            ' border-2 border-primary bg-gradient-to-tr from-primary/50 to-primary px-5 py-3 text-lg font-bold uppercase text-white transition-all duration-200 hover:border-white',
+            ' border-2 border-primary bg-primary/80 px-5 py-3 text-lg font-bold uppercase text-white transition-all duration-200 hover:border-white',
             className
         ),
         // onClick,

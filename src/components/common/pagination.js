@@ -97,8 +97,6 @@ const Pagination = ({
 
     implement();
 
-    console.log('mount: ', pageNumbers);
-
     return (
         <div className="flex items-center justify-center space-x-2 py-5 text-primary">
             <button

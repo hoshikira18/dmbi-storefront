@@ -1,31 +1,61 @@
 'use client';
 import { useProducts } from 'medusa-react';
-import React, { useState } from 'react';
-import { BannerTemplate, Pagination, ProductCardSkeleton } from '../common';
+import React, { useEffect, useState } from 'react';
+import {
+    BannerTemplate,
+    ClientWrap,
+    Pagination,
+    ProductCardSkeleton,
+} from '../common';
 import ProductCard from '../common/product-card';
 import { Search } from '../layout';
 import { PRODUCTS_PER_PAGE } from '@/constants/constants';
+import ProductFilter from './filter';
+import Standee from './standee';
 
-const ProductsTemplate = ({ banners }) => {
+const ProductsTemplate = ({ banners, standeeImage, productOverall }) => {
+    const [q, setQ] = useState('');
+    const [tagsId, setTagsId] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [categoriesId, setCategoriesId] = useState([]);
+    const [collectionsId, setCollectionsId] = useState([]);
+
     const {
         products,
         isLoading: isProductsLoading,
         count,
     } = useProducts({
+        q: q,
+        tags: tagsId,
+        category_id: categoriesId,
+        collection_id: collectionsId,
         limit: PRODUCTS_PER_PAGE,
         offset: (currentPage - 1) * PRODUCTS_PER_PAGE,
     });
 
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [q]);
+
     const TOTAL_PAGES = Math.ceil(count / PRODUCTS_PER_PAGE);
 
     return (
-        <div className="flex px-3 md:px-5 lg:space-x-10 lg:px-8">
-            <div className="hidden w-1/4 rounded border bg-white p-5 shadow lg:block">
-                <Search />
+        <div className="flex flex-col space-y-3 px-3 md:px-5 lg:flex-row lg:space-x-10 lg:space-y-0 lg:px-8">
+            <div className="w-full lg:block lg:w-1/4">
+                <div className="w-full space-y-5 rounded border bg-white p-5 shadow">
+                    <Search setSearchValue={setQ} />
+                    <ProductFilter
+                        setTagsId={setTagsId}
+                        setCollectionsId={setCollectionsId}
+                        setCategoriesId={setCategoriesId}
+                    />
+                    <div className="hidden lg:block">
+                        <Standee standeeImage={standeeImage} />
+                    </div>
+                </div>
             </div>
             <div className="w-full lg:w-3/4">
-                <div className="overflow-hidden rounded">
+                <div className="hidden overflow-hidden rounded lg:block">
                     <BannerTemplate banners={banners} />
                 </div>
                 <div>
@@ -40,7 +70,7 @@ const ProductsTemplate = ({ banners }) => {
                         </div>
                     ) : (
                         <div>
-                            <div className="grid gap-y-5 py-5 sm:grid-cols-2 md:grid-cols-3">
+                            <div className="grid grid-cols-2 gap-3 py-5 md:grid-cols-3">
                                 {products?.map((product, index) => (
                                     <ProductCard
                                         key={index}
@@ -49,7 +79,6 @@ const ProductsTemplate = ({ banners }) => {
                                 ))}
                             </div>
                             <Pagination
-                                // totalItems={20}
                                 totalPages={TOTAL_PAGES}
                                 currentPage={currentPage}
                                 setCurrentPage={setCurrentPage}
@@ -57,6 +86,7 @@ const ProductsTemplate = ({ banners }) => {
                         </div>
                     )}
                 </div>
+                <div>{/* Product overall */}</div>
             </div>
         </div>
     );

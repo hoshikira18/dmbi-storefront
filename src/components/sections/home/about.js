@@ -25,7 +25,7 @@ const AboutSection = async () => {
                     />
                 </div>
                 <div className="z-20 col-span-7 md:col-span-4 md:px-5 lg:px-10">
-                    <TextViewer about={store?.metadata?.about} />
+                    <TextViewer content={store?.metadata?.about} />
                 </div>
             </div>
         </div>
