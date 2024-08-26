@@ -1,7 +1,7 @@
 import { Footer, Header } from '../layout';
 
-export const revalidate = 10;
-export const dynamic = 'force-dynamic';
+export const revalidate = 60 * 2000;
+// export const dynamic = 'force-dynamic';
 
 const Layout = ({ children }) => {
     return (

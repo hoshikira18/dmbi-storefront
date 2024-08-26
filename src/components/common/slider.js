@@ -22,7 +22,7 @@ const Slider = ({
         <div className={cn('relative overflow-hidden')} ref={emblaRef}>
             <div
                 className={cn(
-                    'grid auto-cols-[50%] grid-flow-col pb-10 sm:auto-cols-[33%] md:auto-cols-[25%] lg:auto-cols-[20%]',
+                    'grid auto-cols-[50%] grid-flow-col gap-x-5 pb-10 sm:auto-cols-[33%] md:auto-cols-[25%] lg:auto-cols-[20%]',
                     className
                 )}
             >

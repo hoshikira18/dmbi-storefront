@@ -8,12 +8,9 @@ import { useProductCategories } from 'medusa-react';
 
 const Uses = () => {
     const { product_categories, isLoading } = useProductCategories();
-    console.log(product_categories);
-
-    const arr = [1, 2, 3, 4, 5, 6, 7, 8];
 
     return (
-        <div className="bg-gradient-to-b from-primary/80 to-primary/50 px-5 pb-10">
+        <div className="bg-primary px-5 pb-10 shadow-md">
             <Title className="text-center text-white">
                 Ứng dụng ngành công nghiệp
             </Title>
@@ -34,7 +31,12 @@ const Uses = () => {
                       })}
             </div>
             <div className="mt-10 flex justify-center">
-                <Button href="/">Xem thêm</Button>
+                <Button
+                    href="/"
+                    className="bg-white text-primary hover:border-primary"
+                >
+                    Xem thêm
+                </Button>
             </div>
         </div>
     );
