@@ -10,7 +10,7 @@ const Uses = () => {
     const { product_categories, isLoading } = useProductCategories();
 
     return (
-        <div className="bg-primary px-5 pb-10">
+        <div className="bg-primary px-5 pb-10 shadow-md">
             <Title className="text-center text-white">
                 Ứng dụng ngành công nghiệp
             </Title>

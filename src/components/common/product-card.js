@@ -1,12 +1,15 @@
-import { formatNumber } from '@/lib/utils';
+import { cn, formatNumber } from '@/lib/utils';
 import Link from 'next/link';
 
 /* eslint-disable @next/next/no-img-element */
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, className }) => {
     return (
         <Link
             href={`/products/${product.id}`}
-            className="min-h-64 space-y-2 rounded-md border bg-white px-3 pb-5 pt-3 shadow"
+            className={cn(
+                'min-h-64 space-y-2 rounded-md border bg-white px-3 pb-5 pt-3 shadow',
+                className
+            )}
         >
             <img
                 src={product?.thumbnail}

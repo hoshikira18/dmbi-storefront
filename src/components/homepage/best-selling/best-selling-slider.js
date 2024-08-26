@@ -11,7 +11,13 @@ const BestSellingSlider = ({ products }) => {
             }
         >
             {products?.map((product, index) => {
-                return <ProductCard key={index} product={product} />;
+                return (
+                    <ProductCard
+                        key={index}
+                        product={product}
+                        className={`${index === products.length - 1 && 'mr-5'}`}
+                    />
+                );
             })}
         </Slider>
     );

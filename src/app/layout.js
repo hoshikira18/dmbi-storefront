@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { MedusaProvider } from 'medusa-react';
 import { QueryClient } from '@tanstack/react-query';
-import { Layout } from '@/components/layout';
+import { Footer, Layout } from '@/components/layout';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Layout>
+                <Layout footer={<Footer />}>
                     <ToastContainer />
                     <MedusaClient>{children}</MedusaClient>
                 </Layout>
