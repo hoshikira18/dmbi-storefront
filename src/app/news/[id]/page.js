@@ -18,6 +18,10 @@ export const generateMetadata = async ({ params }) => {
 const NewsDetail = async ({ params }) => {
     const otherNews = await getNews(4);
     const news = await getOneNews(params.id);
+    console.log(otherNews);
+    console.log('12345');
+    console.log(params.id);
+    console.log(news);
 
     return (
         <div>
@@ -42,7 +46,7 @@ const NewsDetail = async ({ params }) => {
                     <h1 className="text-lg font-bold text-gray-800 md:text-xl lg:text-2xl">
                         {news?.title}
                     </h1>
-                    <TextViewer content={news.content} />
+                    <TextViewer content={news?.content} />
                 </div>
             </div>
             <div className="mx-auto max-w-screen-xl">
