@@ -2,10 +2,17 @@
 import { BASE_URL } from '@/constants/constants';
 import useFetch from '@/hook/useFetch';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const Footer = () => {
-    const { data: store, loading } = useFetch(BASE_URL + '/store/store');
-    console.log(store?.store[0]);
+    const [store, setStore] = useState(null);
+    const { data, loading } = useFetch(BASE_URL + '/store/store');
+
+    useEffect(() => {
+        setStore(data?.store[0]);
+    }, [data]);
+
+    console.log(store);
 
     return (
         <footer className="min-h-[20vh] bg-primary">
@@ -14,31 +21,21 @@ const Footer = () => {
                     <h3 className="text-xl font-semibold uppercase">
                         <span className="border-b-2">Liên hệ</span>
                     </h3>
-                    <div className="space-y-2">
-                        <div className="font-medium">
-                            <span className="border-b text-base">
-                                Địa chỉ DKKD:{' '}
-                            </span>
-                        </div>
-                        <div className="text-sm">
-                            Số 10, ngách 58, ngõ 80 phố Đại Linh, Phường Trung
-                            Văn, Quận Nam Từ Liêm, Thành phố Hà Nội, Việt Nam
-                        </div>
-                    </div>
-                    <div className="space-y-2">
-                        <div className="font-medium">
-                            <span className="border-b text-base">
-                                VP giao dịch:
-                            </span>
-                        </div>
-                        <div className="text-sm">
-                            Cổng B, Khu công nghiệp Thăng Long, xóm 3 thôn Hải
-                            Bối, Huyện Đông Anh, TP Hà Nội
-                        </div>
-                    </div>
+                    {store?.metadata?.address?.map((a, i) => {
+                        return (
+                            <div key={i} className="space-y-2">
+                                <div className="font-medium">
+                                    <span className="border-b text-base">
+                                        {a?.title}
+                                    </span>
+                                </div>
+                                <div className="text-sm">{a.value}</div>
+                            </div>
+                        );
+                    })}
                     <div>
                         <span>Hotline: </span>
-                        <span>0917360303 - 0917700303</span>
+                        <span>{store?.metadata?.hotline}</span>
                     </div>
                     <div>
                         <span>Fanpage: </span>
@@ -57,12 +54,13 @@ const Footer = () => {
                         <span className="border-b-2">Thông tin hỗ trợ</span>
                     </h3>
                     <div className="flex flex-col space-y-3 text-base">
-                        <Link href={'/'}>Giới thiệu</Link>
-                        <Link href={'/'}>Chính sách bảo hành</Link>
-                        <Link href={'/'}>Chính sách đổi trả</Link>
-                        <Link href={'/'}>Bảo mật thông tin</Link>
-                        <Link href={'/'}>Chính sách giao hàng</Link>
-                        <Link href={'/'}>Phương thức thanh toán</Link>
+                        {store?.metadata?.support_info?.map((e, i) => {
+                            return (
+                                <Link key={i} href={`/news/${e.id}`}>
+                                    {e.label}
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
                 <div className="space-y-5 pr-10">
