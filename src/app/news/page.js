@@ -1,7 +1,6 @@
 import { NewsTemplate } from '@/components/news';
 
 const News = () => {
-
     return <NewsTemplate />;
 };
 
