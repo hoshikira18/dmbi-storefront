@@ -33,14 +33,16 @@ const NewsTemplate = () => {
     });
 
     const TOTAL_PAGES = Math.ceil(count / NEWS_PER_PAGE);
-    console.log(news?.posts);
+
     return (
         <div className="mx-auto block min-h-[80vh] max-w-screen-xl">
-            <h1 className="px-5 lg:px-0 py-5 text-xl font-bold uppercase text-primary md:py-7 md:text-2xl">TIN TỨC</h1>
-            <div className="mx-auto block min-h-[80vh] max-w-screen-xl py-[30px] md:flex">
+            <h1 className="px-5 py-5 text-xl font-bold uppercase text-primary md:py-7 md:text-2xl lg:px-0">
+                TIN TỨC
+            </h1>
+            <div className="mx-auto block min-h-[80vh] max-w-screen-xl md:flex">
                 <div className="w-1/1 md:w-3/4">
                     <div>
-                        <div className="px-[15px] md:px-0 md:pr-[15px]">
+                        <div className="space-y-3 px-[15px] md:px-0 md:pr-[15px]">
                             {news?.posts?.map((newsItem) => (
                                 <NewsItem key={newsItem.id} news={newsItem} />
                             ))}
